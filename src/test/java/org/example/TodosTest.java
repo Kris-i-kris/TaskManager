@@ -37,6 +37,7 @@ public class TodosTest {
         String[] subtasks = {"Молоко", "Яйца", "Хлеб"};
         Epic epic = new Epic(55, subtasks);
 
+
         Meeting meeting = new Meeting(
                 555,
                 "Выкатка 3й версии приложения",
@@ -50,10 +51,8 @@ public class TodosTest {
         todos.add(epic);
         todos.add(meeting);
 
-        todos.search("НетоБанка");
-
-        Task[] expected = {meeting};
-        Task[] actual = todos.search("НетоБанка");
+        Task[] expected = {epic};
+        Task[] actual = todos.search("Хлеб");
         Assertions.assertArrayEquals(expected, actual);
     }
 }

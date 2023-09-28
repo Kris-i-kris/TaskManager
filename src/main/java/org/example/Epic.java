@@ -9,6 +9,10 @@ public class Epic extends Task {
         this.subtasks = subtasks;
     }
 
+    public String[] getSubtasks() {
+        return subtasks;
+    }
+
     @Override
     public boolean matches(String query) {
         for (int i = 0; i < subtasks.length; i++) {
@@ -19,3 +23,4 @@ public class Epic extends Task {
         return false;
     }
 }
+

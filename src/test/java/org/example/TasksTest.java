@@ -25,7 +25,7 @@ public class TasksTest {
     }
 
     @Test
-    public void containsQueryMeetingTrue() {
+    public void containsQueryMeetingProjectTrue() {
         Meeting meeting = new Meeting(
                 555,
                 "Выкатка 3й версии приложения",
@@ -34,8 +34,22 @@ public class TasksTest {
         );
 
        // meeting.matches("приложение");
-        boolean expected = true;
+        boolean  expected = true;
         boolean actual = meeting.matches("Приложение");
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void containsQueryMeetingTopicTrue() {
+        Meeting meeting = new Meeting(
+                555,
+                "Выкатка 3й версии приложения",
+                "Приложение НетоБанка",
+                "Во вторник после обеда"
+        );
+
+        // meeting.matches("приложение");
+        boolean  expected = true;
+        boolean actual = meeting.matches("приложения");
         Assertions.assertEquals(expected, actual);
     }
     @Test
